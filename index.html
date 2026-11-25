@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support Amani Children's Home through our student-led community fundraiser.">
+  <title>Amani Children's Home | Community Fundraiser</title>
+  <style>
+    :root { color-scheme: light; --navy:#15324b; --blue:#246b8f; --pale:#eef7fa; --ink:#243746; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:linear-gradient(180deg,#eaf5f8,#fff 55%); line-height:1.6; }
+    header { background:var(--navy); color:white; text-align:center; padding:48px 20px 42px; }
+    header .heart { font-size:38px; }
+    h1 { margin:8px 0; font-size:clamp(30px,6vw,46px); }
+    header p { margin:8px auto 0; max-width:650px; color:#e3f1f7; }
+    main { width:min(760px,92%); margin:28px auto 50px; }
+    section { background:white; border-radius:18px; padding:25px; margin:18px 0; box-shadow:0 8px 28px rgba(21,50,75,.08); }
+    h2 { color:var(--navy); margin-top:0; }
+    .date { display:inline-block; background:#d9edf5; color:#174c68; padding:7px 13px; border-radius:30px; font-weight:bold; }
+    .amounts { display:grid; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:10px; margin:16px 0; }
+    .amount { background:var(--pale); border:1px solid #cfe4ec; border-radius:10px; padding:12px 8px; text-align:center; font-weight:bold; color:#174c68; }
+    .mpesa { background:#f1f8f3; border:1px solid #cce5d2; border-radius:14px; padding:18px; }
+    .number { font-size:clamp(24px,5vw,32px); font-weight:bold; letter-spacing:1px; color:#145b35; margin:8px 0; }
+    button { border:0; border-radius:9px; background:var(--blue); color:white; padding:12px 18px; font-size:16px; font-weight:bold; cursor:pointer; }
+    button:hover { filter:brightness(.93); }
+    li { margin:8px 0; }
+    .notice { font-size:14px; color:#536575; background:#f6f8fa; border-left:4px solid #7b9bab; padding:13px 15px; border-radius:7px; }
+    footer { text-align:center; padding:20px; color:#637481; font-size:13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="heart" aria-hidden="true">💙</div>
+    <h1>Amani Children's Home</h1>
+    <p>Let's come together to share kindness, encouragement and support with the children.</p>
+  </header>
+  <main>
+    <section>
+      <span class="date">Visit planned for Sunday, 29 November 2026</span>
+      <h2>Be part of the kindness</h2>
+      <p>We are organising a student-led community fundraiser to support our planned visit to Amani Children's Home. Every contribution, no matter how small, is appreciated.</p>
+      <p>You can contribute any amount. Suggested amounts:</p>
+      <div class="amounts">
+        <div class="amount">KSh 50</div><div class="amount">KSh 100</div>
+        <div class="amount">KSh 150</div><div class="amount">KSh 200</div>
+        <div class="amount">KSh 250</div><div class="amount">KSh 500</div>
+        <div class="amount">KSh 1,000</div><div class="amount">Any amount</div>
+      </div>
+    </section>
+    <section>
+      <h2>How to contribute using M-Pesa</h2>
+      <div class="mpesa">
+        <strong>Send Money to:</strong>
+        <div class="number">0759355724</div>
+        <button type="button" onclick="copyNumber()">Copy M-Pesa number</button>
+        <p id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+      <ol>
+        <li>Open M-Pesa on your phone.</li>
+        <li>Select <strong>Send Money</strong>.</li>
+        <li>Enter the number shown above.</li>
+        <li>Enter the amount you wish to contribute.</li>
+        <li>Before confirming, check that the recipient name displayed is correct. If anything looks unfamiliar, do not send and contact the organiser first.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Transparency</h2>
+      <p>For this fundraiser, contributions are being received temporarily by the student organiser on behalf of the planned Amani Children's Home visit. The money will be kept separate, recorded, and handed over to the home's management, with a record of the total collected.</p>
+      <p class="notice"><strong>Please note:</strong> This is a temporary collection number, not an official Amani Children's Home M-Pesa account. Please confirm the recipient name on your M-Pesa screen before sending. Keep your M-Pesa confirmation message.</p>
+    </section>
+    <section>
+      <h2>Thank you</h2>
+      <p>Your kindness can make a difference. Thank you for supporting the children and sharing this fundraiser with friends, classmates and family.</p>
+    </section>
+  </main>
+  <footer>Community fundraiser for the planned Amani Children's Home visit · November 2026</footer>
+  <script>
+    function copyNumber() {
+      const number = "0759355724";
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(number).then(() => {
+          document.getElementById("copyStatus").textContent = "Number copied.";
+        }).catch(() => {
+          document.getElementById("copyStatus").textContent = "Please copy the number manually.";
+        });
+      } else {
+        document.getElementById("copyStatus").textContent = "Please copy the number manually.";
+      }
+    }
+  </script>
+</body>
+</html>
